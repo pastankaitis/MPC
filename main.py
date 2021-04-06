@@ -29,7 +29,7 @@ mpc = template_mpc(model)
 simulator = template_simulator(model)
 estimator = do_mpc.estimator.StateFeedback(model)
 
-x0 = np.array([2.5, 2.5, 0.0]).reshape(-1,1)
+x0 = np.array([0.0, 0.0, 0.0]).reshape(-1,1)
 mpc.x0 = x0
 simulator.x0 = x0
 
