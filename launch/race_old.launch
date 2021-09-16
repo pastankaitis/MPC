@@ -2,7 +2,7 @@
 <launch>
 
   <!-- Launch a map from the maps folder-->
-  <arg name="map" default="$(find f110_simulator)/maps/columbia.yaml"/>
+  <arg name="map" default="$(find f110_simulator)/maps/SOCHI.yaml"/>
   <node pkg="map_server" name="map_server" type="map_server" args="$(arg map)"/>
 
   <!-- Launch the racecar model -->
@@ -44,9 +44,14 @@
   <!-- Launch RVIZ -->
   <node pkg="rviz" type="rviz" name="rviz" args="-d $(find f110_simulator)/launch/simulator.rviz" output="screen"/>
 
-<node pkg="first_race" type="pure_pursuit.py" name="ftg" output="screen"/>
+<node pkg="first_race" type="mpc_drive.py" name="mpc_node" output="screen"/>
 
-<node pkg="first_race" type="visualize_points.py" name="visualize_points" output="screen"/>
+<node pkg="first_race" type="visualize_points.py" name="visualization_marker_array" output="screen"/>
+
+
+
+
+
 
 
 
